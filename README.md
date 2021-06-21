@@ -11,18 +11,18 @@ Fetch Rewards Data Structure:
 #  Business Questions and Answers
 - *Check data_query notebook for queries*
 
-### Question 1: What are the top 5 brands by receipts scanned for most recent month?
+### Question 1: What are the top 5 brands by receipts scanned for most recent month? 
 ![picture alt](images/q1.png)
 
 
-### Question 2: What are the top 5 brands by receipts scanned for most recent month?
+### Question 2: When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 ![picture alt](images/q2.png)
 
-### Question 4: What are the top 5 brands by receipts scanned for most recent month?
+### Question 4: When considering total number of items purchased from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 ![picture alt](images/q4.png)
 
 
-### Question 5: What are the top 5 brands by receipts scanned for most recent month?
+### Question 5: Which brand has the most spend among users who were created within the past 6 months?
 ![picture alt](images/q5.png)
 
 
