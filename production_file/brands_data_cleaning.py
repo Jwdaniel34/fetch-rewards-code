@@ -25,7 +25,7 @@ def BrandIdCpg(id_data, column=None):
         
     return cleanedList
 
-def brandsCleningDF():
+def brandsCleaningDF():
 
     brand_df = pd.read_csv('csv_files/brands.csv', index_col = 0)
     brands_df = brand_df.copy()

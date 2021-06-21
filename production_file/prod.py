@@ -17,39 +17,15 @@ from s3upload import *
 from user_data_cleaning import *
 from receiptItem_data_cleaning import *
 from receipt_data_cleaning import *
+from brands_data_cleaning import *
+from query_file import *
+
+def prodReady():
+    print('querying your dataset')
+    fullQuery()
+    print('saved in query data set folder')
 
 
-# Upload data from S3
-dataNames, urlList = parseHtml(html_url)
-createFiles(dataNames, urlList)
+prodReady()
 
-# Clean User data
-users_df = cleanUserData()
-
-# Clean Receipt data
-receipt_df = receiptDf()
-
-# Clean Receipt Items Data
-# receiptItem_df = dataCleaning(receiptItemsDataset(receiptIds()))
-
-# Clean Brands Receipt
-brands_df = brandsCleningDF()
-
-pysqldf = lambda q: sqldf(q, globals())
-
-# Query the questions
-
-receiptItem_df = pd.read_pickle('clean_data/receiptitems_dataset.zip')
-users_df['createdDate'] = pd.to_datetime(users_df['createdDate'])
-date_col = ['createDate','dateScanned','finishedDate','purchaseDate','purchaseDate']
-
-for col in date_col:
-    receipt_df[f'{col}'] = pd.to_datetime(receipt_df[f'{col}'])
-
-
-print('querying your dataset')
-queryOne()
-queryThree()
-queryFour()
-queryFive()
-print('saved in query data set folder')
+# note seems pandasql does not work in main files to run but works in the notebook.

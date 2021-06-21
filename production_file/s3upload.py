@@ -10,8 +10,8 @@ import gzip
 import os
 
 
-def parseHtml(html_url):
-    
+def parseHtml():
+    html_url = "https://fetch-hiring.s3.amazonaws.com/data-analyst/ineeddata-data-modeling/data-modeling.html"
     r = requests.get(html_url)
     soup = BeautifulSoup(r.content, 'html.parser')
     parsed_html = soup
@@ -50,20 +50,20 @@ def createFiles(data_files, file_urls):
             # if the file exist already we will rewrite over to json file
             #  or we can log as new file if there is new date
 
-            json_path = 'json_files_practice/'
+            json_path = 'json_files/'
             if not os.path.exists(json_path):
                 os.makedirs(json_path)
 
-            if os.path.exists(f"json_files_practice/{names}.json"):
-                shutil.copy(f'{names}.json', 'json_files_practice/')
+            if os.path.exists(f"json_files/{names}.json"):
+                shutil.copy(f'{names}.json', 'json_files/')
                 print('File rewritten')
             else:
             # else the file does not exists we will move the file to the proper folder
-                shutil.move(f'{names}.json', 'json_files_practice/')
+                shutil.move(f'{names}.json', 'json_files/')
                 print('File moved')
 
 
-            df = pd.read_json(f'json_files_practice/{names}.json', lines = True)
+            df = pd.read_json(f'json_files/{names}.json', lines = True)
 
             # create folder for csv_files
             csv_path = 'csv_files/'

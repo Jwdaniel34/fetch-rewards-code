@@ -48,7 +48,7 @@ def cleanIdCpg(id_data, column=None):
     return cleanedList
 
 def cleanUserData():    
-    user_df = pd.read_csv('csv_files_/users.csv', index_col = 0)
+    user_df = pd.read_csv('csv_files/users.csv', index_col = 0)
     users_df = user_df.copy()
 
     users_df['_id'] = cleanIdCpg(id_data=users_df, column="_id")
@@ -59,7 +59,7 @@ def cleanUserData():
     users_df['createdDate'] = pd.to_datetime(users_df['createdDate'])
     users_df["lastLogin"] = pd.to_datetime(users_df['lastLogin'])
     users_df = users_df.rename(columns = {'_id':'user_id'}, inplace = False)
-    users_df.to_csv('clean_data_practice/users_dataset.csv')
+    users_df.to_csv('clean_data_prod/users_dataset.csv')
     
     return users_df
 

@@ -112,7 +112,7 @@ def receiptItemsDataset(df):
     return sample_lst[receiptItem_col]
 
 
-def dataCleaning(df)   
+def dataCleaning(df): 
 
     datacleaning = df.copy()
     datacleaning['barcode'] = datacleaning['barcode'].replace(np.nan, '4011')
@@ -131,6 +131,7 @@ def dataCleaning(df)
     datacleaning['userFlaggedBarcode'] = datacleaning['userFlaggedBarcode'].replace(np.nan,'4011')
     datacleaning['userFlaggedQuantity'] = datacleaning['userFlaggedQuantity'].replace(np.nan, 0)
     datacleaning['userFlaggedDescription'] = datacleaning['userFlaggedDescription'].replace(np.nan, 'ITEM NOT FOUND')
+    
     datacleaning['userFlaggedPrice'] = datacleaning['userFlaggedPrice'].replace(np.nan, 0)
     dataCleaning = dataCleaning.drop(columns=['userFlaggedBarcode', 'userFlaggedDescription'])
     receipts_itemdf = dataCleaning.copy()

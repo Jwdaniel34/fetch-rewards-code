@@ -11,6 +11,41 @@ import time
 from time_converter import Time
 
 # Receipt Item Data Model Cleaning
+# User Data Model cleaning
+def cleanDateLog(id_data, column=None):
+    id_list = list(id_data[f'{column}'].to_dict().values())
+    times_list = []
+    dates_list = []
+    for i in range(len(id_list)):
+        try: 
+            
+            date_parsed = id_list[i].replace('}', "").split(':')[1].replace(" ", "")
+            date_converted = Time(int(date_parsed[:10]), 'posix').to('dt')
+            format_date = "%m/%d/%Y"
+            format_time = "%H:%M:%S"
+            formated_date = date_converted.strftime(format_date)
+            formated_time = date_converted.strftime(format_time)
+            times_list.append(formated_time)
+            dates_list.append(formated_date)
+        except AttributeError:
+            
+            date_parsed = str(id_list[i])
+            dates_list.append(date_parsed)
+            
+    return dates_list
+
+def cleanIdCpg(id_data, column=None):
+
+    # create the dictionary into a list to only get the values
+    id_list = list(id_data[f'{column}'].to_dict().values())
+    cleanedList = []
+    for i in range(len(id_list)):
+        parsed_name = id_list[i]
+        parsed_names = re.findall("'([^']*)'", id_list[i])
+
+        cleanedList.append(parsed_names[-1])
+        
+    return cleanedList
 
 def convertDates(df):
     new_df = df.copy()
