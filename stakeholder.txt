@@ -1,0 +1,29 @@
+Hello Everyone,
+
+I hope all is well, I have a few updates and questions 
+about the data received. We were able to effectively analyze the data
+and show visualizations, please see our github to view.
+
+1) As far as the data, will we be tracking the receipt ids per 
+receipt item? 
+
+2) We may have a few columns that are centered around  rewards and if we are tracking
+for rewards would we consider a dataset tracking rewards?
+
+3) If an item does not show the name or description, will there be there
+be a way to cross reference through a different source?
+
+After continued analysis the data quality seems to have a few issues. 
+The data is compacted into the receipt dataset which may cause unnesscary duplicated item receipt_id.
+If we would like to resolve this issue we would have to create a dataset that has the information 
+mainly for the item and the receipt_id to connect to our users.
+
+I do see some time performance issues if we are rolling through each dataset. Due to the duplications on the items
+receiving a receipt_id. It could take some time to run smoothly. If we anticipate using any visualizations
+on the cloud this may slow us down visually. I can plan on removing any data that is not described but this may take away
+from possible predictions and analysis we can make. 
+
+Please let me know if this information helps direct where we should go further. I would be happy to assist.
+
+Best Regards,
+John Daniel,
