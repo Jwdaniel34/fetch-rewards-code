@@ -10,7 +10,7 @@ receipt item?
 2) We may have a few columns that are centered around  rewards and if we are tracking
 for rewards would we consider a dataset tracking rewards?
 
-3) If an item does not show the name or description, will there be there
+3) If an item does not show the name or description, will there 
 be a way to cross reference through a different source?
 
 After continued analysis the data quality seems to have a few issues. 
