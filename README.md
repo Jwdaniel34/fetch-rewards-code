@@ -1,7 +1,14 @@
-# Fetch Rewards Coding Data Analyst
+# Fetch Rewards Coding Challenge 
 Analyze and Answer Business Questions
 
-I will be giving information on our current data and what we observed from the analysis. 
+I was asked to 
+
+- Graph a Data Structure 
+- Model unstructed data to structured data
+- Answer the business questions and communicate it properly
+- Send an email to the stakeholders speaking on business answers and data quailty
+- Have the script close to production as possible
+
 
 
 Fetch Rewards Data Structure: 
